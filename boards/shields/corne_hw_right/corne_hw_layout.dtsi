@@ -1,7 +1,7 @@
 #include <physical_layouts.dtsi>
 
 / {
-    physical_layout0: physical_layout_0 {
+    corne_hw_physical_layout: corne_hw_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "LAYOUT";
 

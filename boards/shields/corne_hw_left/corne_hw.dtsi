@@ -10,14 +10,14 @@
 
 #include "corne_hw_layout.dtsi"
 
-&foostan_corne_6col_layout {
+&corne_hw_physical_layout {
     transform = <&default_transform>;
 };
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &foostan_corne_6col_layout;
+        zmk,physical-layout = &corne_hw_physical_layout;
     };
 
     default_transform: keymap_transform_0 {
