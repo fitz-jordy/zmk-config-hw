@@ -10,6 +10,41 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        double_shift {
+            bindings = <&caps_word>;
+            key-positions = <41 24>;
+        };
+
+        combo_m_you {
+            bindings = <&m_you>;
+            key-positions = <8 9>;
+        };
+
+        combo_m_eye {
+            bindings = <&m_eye>;
+            key-positions = <20 9>;
+        };
+    };
+
+    macros {
+        m_you: m_you {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Y &kp O &kp U>;
+            label = "M_YOU";
+        };
+
+        m_eye: m_eye {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp Y &kp E>;
+            label = "M_EYE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -67,20 +102,20 @@
         game_layer {
             display-name = "GAM";
             bindings = <
-&kp ESCAPE    &kp Q  &kp W  &kp F      &kp P               &kp B        &kp J            &kp L      &kp U            &kp Y    &kp SINGLE_QUOTE  &kp DELETE
-&sk LEFT_ALT  &kp A  &kp R  &kp S      &kp T               &kp G        &kp M            &kp N      &kp E            &kp I    &kp O             &kp RIGHT_ALT
-&sk LSHFT     &kp Z  &kp X  &kp C      &kp D               &kp V        &kp K            &kp H      &kp COMMA        &kp DOT  &kp FSLH          &kp ESC
-                            &sk LCTRL  &mt LEFT_GUI ENTER  &lt 1 TAB    &lt 2 BACKSPACE  &kp SPACE  &sk RIGHT_SHIFT
+&kp LG(PRINTSCREEN)  &kp ESCAPE      &kp Q  &kp W         &kp E      &kp R     &kp J            &kp L      &kp U            &kp Y    &kp SINGLE_QUOTE  &kp DELETE
+&kp LA(ENTER)        &kp TAB         &kp A  &kp S         &kp D      &kp F     &kp M            &kp N      &kp E            &kp I    &kp O             &kp RIGHT_ALT
+&kp LEFT_CONTROL     &kp LEFT_SHIFT  &kp Z  &kp X         &kp C      &kp V     &kp K            &kp H      &kp COMMA        &kp DOT  &kp FSLH          &kp ESC
+                                            &kp LEFT_ALT  &kp SPACE  &trans    &lt 2 BACKSPACE  &kp SPACE  &sk RIGHT_SHIFT
             >;
         };
 
         function_layer {
             display-name = "FUN";
             bindings = <
-&trans  &kp F1    &kp F2        &kp F3        &kp F4         &kp F5           &kp F6  &kp F7               &kp F8         &kp F9  &kp F10     &trans
-&trans  &kp F11   &kp F12       &none         &bt BT_DISC 2  &none            &none   &kp LG(PRINTSCREEN)  &kp LG(LA(R))  &none   &none       &trans
-&trans  &kp CAPS  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_CLR       &none   &none                &none          &none   &sys_reset  &trans
-                                &trans        &trans         &kp SEMICOLON    &trans  &tog 3               &trans
+&trans  &kp F1    &kp F2        &kp F3        &kp F4         &kp F5                  &kp F6  &kp F7               &kp F8         &kp F9  &kp F10     &trans
+&trans  &kp F11   &kp F12       &bt BT_CLR    &bt BT_DISC 2  &kp C_BRIGHTNESS_INC    &none   &kp LG(PRINTSCREEN)  &kp LG(LA(R))  &none   &none       &trans
+&trans  &kp CAPS  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &kp C_BRIGHTNESS_DEC    &none   &kp LG(LS(S))        &none          &none   &sys_reset  &trans
+                                &trans        &trans         &kp SEMICOLON           &trans  &tog 3               &trans
             >;
         };
     };
