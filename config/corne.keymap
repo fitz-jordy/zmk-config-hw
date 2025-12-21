@@ -10,10 +10,10 @@
 #include <dt-bindings/zmk/keys.h>
 
 &lt {
-    tapping-term-ms = <280>;
+    tapping-term-ms = <300>;
     quick-tap-ms = <175>;
     require-prior-idle-ms = <150>;
-    flavor = "balanced";
+    flavor = "tap-preferred";
 };
 
 / {
@@ -68,7 +68,7 @@
 &kp ESCAPE    &kp Q  &kp W  &kp F      &kp P               &kp B        &kp J            &kp L      &kp U            &kp Y    &kp SINGLE_QUOTE  &kp DELETE
 &sk LEFT_ALT  &kp A  &kp R  &kp S      &kp T               &kp G        &kp M            &kp N      &kp E            &kp I    &kp O             &kp RIGHT_ALT
 &sk LSHFT     &kp Z  &kp X  &kp C      &kp D               &kp V        &kp K            &kp H      &kp COMMA        &kp DOT  &kp FSLH          &sl 3
-                            &sk LCTRL  &mt ENTER LEFT_GUI  &lt 1 TAB    &lt 2 BACKSPACE  &kp SPACE  &sk RIGHT_SHIFT
+                            &sk LCTRL  &mt LEFT_GUI ENTER  &lt 1 TAB    &lt 2 BACKSPACE  &kp SPACE  &sk RIGHT_SHIFT
             >;
         };
 
@@ -82,10 +82,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR        &kp PERCENT       &kp CARET        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR        &kp PERCENT       &kp CARET        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BSPC
 &trans  &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp NUMBER_5      &kp NUMBER_6     &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9          &kp NUMBER_0           &trans
 &trans  &trans           &kp TILDE     &kp GRAVE     &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &trans        &trans                &kp LEFT_WIN           &trans
-                                       &trans        &trans            &trans            &trans           &trans             &kp COLON
+                                       &trans        &trans            &trans            &kp BACKSPACE    &trans             &kp COLON
             >;
         };
 
